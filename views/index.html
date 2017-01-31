@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/vendor/tacit-0.6.1.min.css" />
+  <title>Liste apprenants</title>
+  <style media="screen">
+    .col-2{
+      float: left;
+      min-width: 20%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .col-3{
+      float: left;
+      min-width: 25%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .col-4{
+      float: left;
+      min-width: 33%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #students > thead > tr > th{
+      width: 15%;
+    }
+    #students > thead > tr > th.address {
+      width: 40%;
+    }
+    #students th[data-sort] {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Informations session Janvier 2017</h1>
+  <div id="header">
+    <div class="col-3" id="averrage">Moyenne d'âge : <b>XXX</b> </div>
+    <div class="col-4" id="longName">Nom le plus long : <b>TTT</b> </div>
+    <div class="col-2" id="percentM">Homme : <b>X%</b> </div>
+    <div class="col-2" id="percentF">Femme : <b>Y%</b> </div>
+  </div>
+  <div>
+    <h3>Liste</h3>
+
+    <table id="students">
+      <thead>
+        <tr>
+          <!-- sorted by name by default -->
+          <th data-sort="lastname">Nom</th>
+          <th data-sort="firstname">Prénom</th>
+          <th data-sort="age">Age</th>
+          <th data-sort="gender">Genre</th>
+          <th data-sort="address">Adresse</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+  <script type="text/javascript" src="/collections/students.js"></script>
+  <script type="text/javascript" src="/models/student.js"></script>
+  <script type="text/javascript" src="/controllers/students_controller.js"></script>
+</body>
+
+
+</html>
