@@ -5,6 +5,9 @@
   <link rel="stylesheet" href="/vendor/tacit-0.6.1.min.css" />
   <title>Liste apprenants</title>
   <style media="screen">
+    body {
+      font-size: 16px;
+    }
     .col-2{
       float: left;
       min-width: 20%;
@@ -23,6 +26,12 @@
       text-align: center;
       margin-bottom: 15px;
     }
+    .col-10{
+      float: left;
+      min-width: 80%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
     #students > thead > tr > th{
       width: 15%;
     }
@@ -32,6 +41,13 @@
     #students th[data-sort] {
       cursor: pointer;
     }
+    #toolbar, #header{
+      height: 40px;
+    }
+    #toolbar *{
+      vertical-align: middle;
+    }
+    input {padding: 5px; margin: 5px;}
   </style>
 </head>
 <body>
@@ -42,7 +58,33 @@
     <div class="col-2" id="percentM">Homme : <b>X%</b> </div>
     <div class="col-2" id="percentF">Femme : <b>Y%</b> </div>
   </div>
-  <div>
+  <div id="toolbar" class="col-2">
+    <label for="address-filter">Filtrer par adresse : </label>
+    <input id="address-filter" />
+    <h2>Ajout étudiant</h2>
+    <form id="add-student">
+      <label for="firstname">Prénom : </label>
+      <input id="firstname" name="firstname" />
+
+      <label for="lastname">Nom : </label>
+      <input id="lastname" name="lastname" />
+
+      <label for="age">Age : </label>
+      <input id="age" type="number" name="age"/>
+
+      <label for="address">Adresse : </label>
+      <input id="address" name="address"/>
+
+      <label for="gender">Genre :</label>
+      <select name="gender">
+        <option value="F">Femme</option>
+        <option value="M">Homme</option>
+      </select>
+      <button class="btn" id="clear">Vider</button>
+      <input type="submit" class="btn" id="send-form" />
+    </form>
+  </div>
+  <div class="col-10">
     <h3>Liste</h3>
 
     <table id="students">
@@ -54,6 +96,7 @@
           <th data-sort="age">Age</th>
           <th data-sort="gender">Genre</th>
           <th data-sort="address">Adresse</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>

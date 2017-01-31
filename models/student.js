@@ -4,9 +4,10 @@ class Student {
   constructor(json){
     this.lastname = json.lastname.trim().toUpperCase();
     this.firstname = json.firstname.trim();
-    this.age = json.age;
+    this.age = Math.floor(json.age);
     this.gender = json.gender;
     this.address = this.titleize(json.address);
+    this.id = json.id;
   }
 
   fullname () {
@@ -17,6 +18,10 @@ class Student {
     return string.trim().replace(/\s+/g, ' ').toLowerCase().split(" ").map((word) => {
       return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(" ")
+  }
+
+  doesStudentContains(string) {
+    return this.address.toLowerCase().includes(string.toLowerCase());
   }
 
 }
