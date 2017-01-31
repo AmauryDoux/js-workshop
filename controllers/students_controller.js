@@ -1,10 +1,6 @@
 'use strict'
 
 function refreshTable(table, students) {
-  for (let link of table.querySelectorAll(".delete-student")) {
-    link.removeEventListener("click", deleteStudent);
-  }
-
   table.innerHTML = "";
 
   students.data.forEach((student) => {
@@ -29,31 +25,11 @@ function refreshTable(table, students) {
                     <td>${student.address}</td>
                     <td><a href="#" data-id="${student.id}" class="btn delete-student">Delete</a></td>`;
 
-    line.querySelector(".delete-student").addEventListener("click", deleteStudent)
-
     table.appendChild(line);
-  }
-
-  function deleteStudent(event){
-    let filterAddressInput = document.querySelector("#address-filter");
-    let clickedLink = event.currentTarget;
-    let studentId  = clickedLink.getAttribute("data-id");
-
-    event.preventDefault();
-
-    students.removeStudent(studentId);
-
-    if (filterAddressInput.value && filterAddressInput.value !== "") {
-      students.filterStudents(filterAddressInput.value);
-    }
-
-    refreshTable(table, students);
   }
 }
 
 (function() {
-
-
   // Create HttpRequest
   let req = new XMLHttpRequest();
 
@@ -70,47 +46,8 @@ function refreshTable(table, students) {
         let students = new Students(studentsJSON);
 
         let table = document.querySelector('#students > tbody');
-        let filterAddressInput = document.querySelector("#address-filter");
-        let form  = document.querySelector('form#add-student');
-
-        if (filterAddressInput.value && filterAddressInput.value !== "") {
-          students.filterStudents(filterAddressInput.value);
-        }
 
         refreshTable(table, students);
-
-        filterAddressInput.addEventListener("keyup", (event) => {
-          let searched = event.currentTarget.value;
-
-          if (searched && searched !== ""){
-            students.filterStudents(searched);
-          } else {
-            students.data = students.unfilteredData;
-          }
-          refreshTable(table, students);
-        });
-
-        form.querySelector("#send-form").addEventListener("click", (event) => {
-          event.preventDefault();
-          let inputs = form.querySelectorAll("input, select");
-          let data = {};
-
-          for (let input of inputs){
-            if (input.name) {
-              data[input.name] = input.value;
-            }
-          }
-
-          let student = new Student(data);
-
-          students.addStudent(student);
-          refreshTable(table, students);
-        })
-
-        form.querySelector("button#clear").addEventListener("click", (event) => {
-          event.preventDefault();
-          form.reset();
-        });
 
       } else {
         alert(`Status: ${req.status} - Could not load ${url}`);
