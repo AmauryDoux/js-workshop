@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/stylesheets/base.css" />
   <title>Liste apprenants</title>
 </head>
-<body ng-controller="studentListController">
+<body>
 
   <h1>Informations session Janvier 2017</h1>
   <div id="header">
@@ -17,39 +17,19 @@
   </div>
   <div id="toolbar" class="col-2">
     <h3>Toolbar</h3>
-    <em>{{greetings}}</em>
   </div>
   <div class="col-10">
-    <h3>Liste {{5+3}} étudiants</h3>
+    <h3>Liste étudiants</h3>
 
-    <table id="students">
-      <thead>
-        <tr>
-          <!-- sorted by name by default -->
-          <th data-sort="lastname">Nom</th>
-          <th data-sort="firstname">Prénom</th>
-          <th data-sort="age">Age</th>
-          <th data-sort="gender">Genre</th>
-          <th data-sort="address">Adresse</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="student in students">
-          <td>{{student.lastname}}</td>
-          <td>{{student.firstname}}</td>
-          <td>{{student.age}}</td>
-          <td>{{student.gender}}</td>
-          <td>{{student.address}}</td>
-          <td><a href="#" data-id="{{student.id}}" class="btn delete-student">Delete</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <student-list></student-list>
+
+
   </div>
 
   <script src="/node_modules/angular/angular.js"></script>
   <script src="/app/studentApp.js"></script>
-  <script src="/app/controller/studentListController.js"></script>
+  <script src="/app/controllers/studentListController.js"></script>
+  <script src="/app/components/studentListComponent.js"></script>
 </body>
 </html>
 
