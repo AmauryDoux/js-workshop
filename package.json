@@ -1,0 +1,14 @@
+{
+  "name": "students-app",
+  "version": "1.0.0",
+  "description": "An app listing students to introduce AngularJS",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Régis MILLET <regmillet@ct2c.fr>",
+  "repository": "https://github.com/Kulgar/js-workshop.git",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}

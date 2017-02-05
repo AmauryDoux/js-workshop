@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app="studentApp">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/vendor/tacit-0.6.1.min.css" />
   <link rel="stylesheet" href="/stylesheets/base.css" />
   <title>Liste apprenants</title>
-  </style>
 </head>
 <body>
   <h1>Informations session Janvier 2017</h1>
@@ -19,7 +18,7 @@
     <h3>Toolbar</h3>
   </div>
   <div class="col-10">
-    <h3>Liste</h3>
+    <h3>Liste {{5+3}} étudiants</h3>
 
     <table id="students">
       <thead>
@@ -38,6 +37,9 @@
       </tbody>
     </table>
   </div>
+
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/app/studentApp.js"></script>
 </body>
 
 
