@@ -2,6 +2,12 @@
   <h3>Toolbar</h3>
   <label for="address-filter">Filtrer : </label>
   <input id="address-filter" ng-model="$ctrl.search" />
+
+  <label>Sort by:</label>
+  <select ng-model="$ctrl.orderProp">
+    <option value="firstname">Alphabetical</option>
+    <option value="age">Youngest</option>
+  </select>
 </div>
 <div class="col-10">
   <h3>Liste étudiants</h3>
@@ -19,7 +25,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="student in $ctrl.students | filter: $ctrl.search">
+    <tr ng-repeat="student in $ctrl.students | filter: $ctrl.search | orderBy: $ctrl.orderProp">
       <td>{{student.lastname}}</td>
       <td>{{student.firstname}}</td>
       <td>{{student.age}}</td>

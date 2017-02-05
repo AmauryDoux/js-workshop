@@ -14,4 +14,6 @@ angular.module("studentList").controller("studentListController", function stude
       "address":"1 place du Gart  33610   CESTAS",
       "id": 1
   }]
+
+  this.orderProp = 'age'
 })
