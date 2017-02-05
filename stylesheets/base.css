@@ -1,0 +1,43 @@
+body {
+  font-size: 16px;
+}
+.col-2{
+  float: left;
+  min-width: 20%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.col-3{
+  float: left;
+  min-width: 25%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.col-4{
+  float: left;
+  min-width: 33%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.col-10{
+  float: left;
+  min-width: 80%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#students > thead > tr > th{
+  width: 15%;
+}
+#students > thead > tr > th.address {
+  width: 40%;
+}
+#students th[data-sort] {
+  cursor: pointer;
+}
+#toolbar, #header{
+  height: 40px;
+}
+#toolbar *{
+  vertical-align: middle;
+}
+input {padding: 5px; margin: 5px;}
