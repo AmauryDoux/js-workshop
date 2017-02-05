@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="/stylesheets/base.css" />
   <title>Liste apprenants</title>
 </head>
-<body>
+<body ng-controller="studentListController">
+
   <h1>Informations session Janvier 2017</h1>
   <div id="header">
     <div class="col-3" id="averrage">Moyenne d'âge : <b>XXX</b> </div>
@@ -16,6 +17,7 @@
   </div>
   <div id="toolbar" class="col-2">
     <h3>Toolbar</h3>
+    <em>{{greetings}}</em>
   </div>
   <div class="col-10">
     <h3>Liste {{5+3}} étudiants</h3>
@@ -40,7 +42,7 @@
 
   <script src="/node_modules/angular/angular.js"></script>
   <script src="/app/studentApp.js"></script>
+  <script src="/app/controller/studentListController.js"></script>
 </body>
-
-
 </html>
+
