@@ -1,25 +1,32 @@
+<div id="toolbar" class="col-2">
+  <h3>Toolbar</h3>
+  <label for="address-filter">Filtrer : </label>
+  <input id="address-filter" ng-model="$ctrl.search" />
+</div>
+<div class="col-10">
+  <h3>Liste étudiants</h3>
 
-
-<table id="students">
-<thead>
-  <tr>
-    <!-- sorted by name by default -->
-    <th data-sort="lastname">Nom</th>
-    <th data-sort="firstname">Prénom</th>
-    <th data-sort="age">Age</th>
-    <th data-sort="gender">Genre</th>
-    <th data-sort="address">Adresse</th>
-    <th>Actions</th>
-  </tr>
-</thead>
-<tbody>
-  <tr ng-repeat="student in $ctrl.students">
-    <td>{{student.lastname}}</td>
-    <td>{{student.firstname}}</td>
-    <td>{{student.age}}</td>
-    <td>{{student.gender}}</td>
-    <td>{{student.address}}</td>
-    <td><a href="#" data-id="{{student.id}}" class="btn delete-student">Delete</a></td>
-  </tr>
-</tbody>
-</table>
+  <table id="students">
+  <thead>
+    <tr>
+      <!-- sorted by name by default -->
+      <th data-sort="lastname">Nom</th>
+      <th data-sort="firstname">Prénom</th>
+      <th data-sort="age">Age</th>
+      <th data-sort="gender">Genre</th>
+      <th data-sort="address">Adresse</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="student in $ctrl.students | filter: $ctrl.search">
+      <td>{{student.lastname}}</td>
+      <td>{{student.firstname}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.gender}}</td>
+      <td>{{student.address}}</td>
+      <td><a href="#" data-id="{{student.id}}" class="btn delete-student">Delete</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
