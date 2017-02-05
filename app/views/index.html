@@ -35,7 +35,14 @@
         </tr>
       </thead>
       <tbody>
-
+        <tr ng-repeat="student in students">
+          <td>{{student.lastname}}</td>
+          <td>{{student.firstname}}</td>
+          <td>{{student.age}}</td>
+          <td>{{student.gender}}</td>
+          <td>{{student.address}}</td>
+          <td><a href="#" data-id="{{student.id}}" class="btn delete-student">Delete</a></td>
+        </tr>
       </tbody>
     </table>
   </div>
