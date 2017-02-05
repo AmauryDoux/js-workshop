@@ -8,6 +8,29 @@
     <option value="firstname">Alphabetical</option>
     <option value="age">Youngest</option>
   </select>
+
+  <h2>Ajout étudiant</h2>
+  <form id="add-student">
+    <label for="firstname">Prénom : </label>
+    <input id="firstname" ng-model="$ctrl.student.firstname" />
+
+    <label for="lastname">Nom : </label>
+    <input id="lastname" ng-model="$ctrl.student.lastname" />
+
+    <label for="age">Age : </label>
+    <input id="age" type="number" ng-model="$ctrl.student.age"/>
+
+    <label for="address">Adresse : </label>
+    <input id="address" ng-model="$ctrl.student.address"/>
+
+    <label for="gender">Genre :</label>
+    <select ng-model="$ctrl.student.gender">
+      <option value="F">Femme</option>
+      <option value="M">Homme</option>
+    </select>
+    <button class="btn-danger" id="clear" ng-click="$ctrl.reset()">Vider</button>
+    <input type="submit" class="btn" id="send-form" ng-click="$ctrl.add(student)" />
+  </form>
 </div>
 <div class="col-10">
   <h3>Liste étudiants</h3>
@@ -31,7 +54,10 @@
       <td>{{student.age}}</td>
       <td>{{student.gender}}</td>
       <td>{{student.address}}</td>
-      <td><a href="#" data-id="{{student.id}}" class="btn delete-student">Delete</a></td>
+      <td>
+        <button class="btn-primary delete-student">Edit</button>
+        <button class="btn-danger delete-student">Delete</button>
+      </td>
     </tr>
   </tbody>
   </table>

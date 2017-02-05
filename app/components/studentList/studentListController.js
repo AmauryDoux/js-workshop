@@ -5,5 +5,12 @@ angular.module("studentList").controller("studentListController", ["$http", func
     this.students = response.data
   })
 
+  this.add = (student) => {
+    this.students.push(student)
+  }
+
+  this.reset = () => {
+    this.student = undefined
+  }
 
 }])
