@@ -1,4 +1,4 @@
-angular.module("studentApp").controller("studentListController", function studentListController() {
+angular.module("studentList").controller("studentListController", function studentListController() {
   this.students = [{
     "lastname": "Mendy",
     "firstname": "Bénédicte",

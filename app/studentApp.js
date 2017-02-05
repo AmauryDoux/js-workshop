@@ -1,2 +1,4 @@
 'use strict'
-angular.module('studentApp', []);
+angular.module('studentApp', [
+  'studentList'
+]);
