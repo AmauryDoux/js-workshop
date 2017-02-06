@@ -5,8 +5,8 @@ angular.module("studentList").controller("studentListController", ["$http", func
     this.students = response.data
   })
 
-  this.add = (student) => {
-    this.students.push(student)
+  this.add = () => {
+    this.students.push(this.student)
   }
 
   this.reset = () => {
