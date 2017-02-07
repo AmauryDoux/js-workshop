@@ -1,12 +1,18 @@
 angular.module("studentList").controller("studentListController", ["$http", function studentListController($http) {
+  let studentsCollection;
   this.orderProp = 'age'
 
   $http.get("/students.json").then((response) => {
-    this.students = response.data
+    studentsCollection = new Students(response.data)
+    this.students = studentsCollection.data;
   })
 
-  this.add = (student) => {
-    this.students.push(student)
+  this.add = () => {
+    if (this.student.lastname){
+      this.students.push(new Student(this.student))
+    } else {
+      alert("Lastname can't be empty")
+    }
   }
 
   this.reset = () => {
