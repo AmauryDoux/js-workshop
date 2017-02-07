@@ -10,7 +10,7 @@
   </select>
 
   <h2>Ajout étudiant</h2>
-  <form id="add-student">
+  <form id="add-student" name="studentForm">
     <label for="firstname">Prénom : </label>
     <input id="firstname" ng-model="$ctrl.student.firstname" />
 
@@ -21,7 +21,7 @@
     <input id="age" type="number" ng-model="$ctrl.student.age"/>
 
     <label for="address">Adresse : </label>
-    <input id="address" ng-model="$ctrl.student.address"/>
+    <input id="address" name="address" ng-model="$ctrl.student.address" ng-pattern="/[a-b]/" ng-required="true"/>
 
     <label for="gender">Genre :</label>
     <select ng-model="$ctrl.student.gender">
@@ -29,8 +29,7 @@
       <option value="M">Homme</option>
     </select>
     <button class="btn-danger" id="clear" ng-click="$ctrl.reset()">Vider</button>
-
-    <input type="submit" class="btn" id="send-form" ng-click="$ctrl.add()" />
+    <input type="submit" class="btn" id="send-form" ng-click="$ctrl.add()" ng-disabled="studentForm.$invalid || studentForm.$pristine" />
   </form>
 </div>
 <div class="col-10">

@@ -8,10 +8,13 @@ angular.module("studentList").controller("studentListController", ["$http", func
   })
 
   this.add = () => {
-    if (this.student.lastname){
-      this.students.push(new Student(this.student))
-    } else {
-      alert("Lastname can't be empty")
+    console.log(this.student)
+    if (this.student){
+      if (this.student.lastname){
+        this.students.push(new Student(this.student))
+      } else {
+        alert("Lastname can't be empty")
+      }
     }
   }
 
