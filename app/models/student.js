@@ -15,4 +15,14 @@ class Student {
   fullname () {
     return this.firstname + " " + this.lastname;
   }
+
+  titleize(string, charSep=/\s+/g) {
+    return string.trim().replace(charSep, ' ').toLowerCase().split(" ").map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(" ")
+  }
+
+  initializeQuests(quests) {
+    this.quests = quests;
+  }
 }

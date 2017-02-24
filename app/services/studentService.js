@@ -5,6 +5,10 @@ angular.module('studentService', ['ngResource'])
       method: 'GET',
       params: {id: 'all'},
       isArray: true
+    },
+    quest: {
+      method: 'GET',
+      url: "/students/quests/:id.json"
     }
   })
 }])

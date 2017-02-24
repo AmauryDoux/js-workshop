@@ -11,15 +11,25 @@ angular.module('studentDetail').component('studentDetail', {
       console.log("Hello")
       this.studentId = $stateParams.id;
 
-      studentFactory.get({id: $stateParams.id}, (student) => {
-        this.student = new Student(student)
-        console.log(student);
-      })/*
-      // ou via les promesses :
-      studentFactory.get({id: $stateParams.id}).$promise.then((student) => {
+      /*studentFactory.get({id: $stateParams.id}, (student) => {
         this.student = new Student(student)
         console.log(student);
       })*/
+
+      let quest;
+
+      studentFactory.quest({id: $stateParams.id}).$promise.then((studentQuest) => {
+        console.log(studentQuest)
+        quest = studentQuest;
+        return studentFactory.get({id: $stateParams.id}).$promise
+      }).then((student) => {
+        this.student = new Student(student)
+        this.student.initializeQuests(quest);
+        console.log(this.student);
+      })
+
+      // ou via les promesses :
+
 
       /*
       $http.get('/students/' + this.studentId + '.json').then((response) => {

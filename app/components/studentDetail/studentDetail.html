@@ -12,6 +12,14 @@
     <li ng-repeat="like in $ctrl.student.likes">{{like}}</li>
   </ul>
 
+  Quests:
+  <ul>
+    <li ng-repeat="(questType, quest) in $ctrl.student.quests">
+      <strong>My {{$ctrl.student.titleize(questType, '_')}} is </strong>
+      {{quest}}
+    </li>
+  </ul>
+
   <br />
 
   <a href="#!/students">Back to list</a>
