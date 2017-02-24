@@ -42,6 +42,17 @@ body {
   vertical-align: middle;
 }
 input {padding: 5px; margin: 5px;}
+.tiny-btn{
+  height: 25px;
+  font-size: 12px;
+  line-height: 1em;
+  margin: 5px;
+  padding: 5px;
+}
+.btn-success {
+  background-color: green;
+  color: white;
+}
 .btn-danger {
   background-color: red;
   color: white;

@@ -1,3 +1,4 @@
+"use strict"
 angular.module("studentList").controller("studentListController", ["$http", function studentListController($http) {
   let studentsCollection;
   this.orderProp = 'age'
