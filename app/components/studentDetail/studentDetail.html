@@ -1,0 +1,18 @@
+<div class="student-detail">
+  <h3>Student ID: {{$ctrl.studentId}}</h3>
+
+  <img ng-src="{{$ctrl.student.avatar}}" />
+
+  <p>
+    {{$ctrl.student.fullname()}}
+  </p>
+
+  Likes
+  <ul>
+    <li ng-repeat="like in $ctrl.student.likes">{{like}}</li>
+  </ul>
+
+  <br />
+
+  <a href="#!/students">Back to list</a>
+</div>

@@ -61,3 +61,9 @@ input {padding: 5px; margin: 5px;}
   background-color: #367ac3;
   color: white;
 }
+
+.student-detail img{
+  max-width: 150px;
+  float: left;
+  margin-right: 20px;
+}

@@ -3,7 +3,7 @@ angular.module("studentList").controller("studentListController", ["$http", func
   let studentsCollection;
   this.orderProp = 'age'
 
-  $http.get("/students.json").then((response) => {
+  $http.get("/data/students.json").then((response) => {
     studentsCollection = new Students(response.data)
     this.students = studentsCollection.data;
   })
