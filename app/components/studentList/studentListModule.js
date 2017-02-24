@@ -1,2 +1,2 @@
 "use strict"
-angular.module('studentList', [])
+angular.module('studentList', ['studentService'])

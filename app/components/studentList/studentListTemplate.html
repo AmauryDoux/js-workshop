@@ -56,7 +56,7 @@
       <td>{{student.gender}}</td>
       <td>{{student.address}}</td>
       <td>
-        <a class="tiny-btn btn-success" ui-sref="detail({id: student.id})" ng-if="student.id === 3">Show</a>
+        <a class="tiny-btn btn-success" ui-sref="detail({id: student.id})" ng-if="student.id < 4">Show</a>
         <button class="tiny-btn btn-primary delete-student">Edit</button>
         <button class="tiny-btn btn-danger delete-student">Delete</button>
       </td>

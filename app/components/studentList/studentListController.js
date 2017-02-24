@@ -1,12 +1,14 @@
 "use strict"
-angular.module("studentList").controller("studentListController", ["$http", function studentListController($http) {
+angular.module("studentList").controller("studentListController", ["studentFactory", function studentListController(studentFactory) {
   let studentsCollection;
   this.orderProp = 'age'
 
-  $http.get("/data/students.json").then((response) => {
+  this.students = studentFactory.query();
+  /*
+  $http.get("/students/all.json").then((response) => {
     studentsCollection = new Students(response.data)
     this.students = studentsCollection.data;
-  })
+  })*/
 
   this.add = () => {
     if (this.student.lastname){

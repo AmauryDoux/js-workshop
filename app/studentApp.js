@@ -1,5 +1,6 @@
 'use strict'
 angular.module('studentApp', [
+  'studentService',
   'studentList',
   'studentDetail',
   'ui.router'
