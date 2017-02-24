@@ -7,10 +7,15 @@ angular.module('studentApp', [
 
 (function() {
   console.log("Hello");
+  // equivalent: get("/students.json").then(JSON.parse)
   get("/students.json").then(function(response) {
-    console.log("Success ! ", response)
+    console.log("Success !")
+    return JSON.parse(response);
   }, function(error) {
     console.log("Failed ! ", error)
+
+  }).then(function(parsedResponse) {
+    console.log(parsedResponse)
   })
 
 })()
