@@ -7,16 +7,25 @@ angular.module('studentApp', [
 
 (function() {
   console.log("Hello");
+  let sequence = Promise.resolve();
   let studentsJSON;
+
   // equivalent: get("/students.json").then(JSON.parse)
   getJSON("/students.json").then(function(students) {
     studentsJSON = students;
-    return getJSON(`/details_info_${students[1].id}.json`);
-  }).then(function(student1Details) {
+
+    students.forEach(function(student){
+      sequence = sequence.then(function(){
+        return getJSON(`/details_info_${student.id}.json`);
+      }).then(function(student1Details) {
+        console.log(student1Details)
+      }).catch(function(error) {
+        console.log("Failed ! ", error)
+      })
+      // also show without catch
+    })
+
     console.log(studentsJSON);
-    console.log(student1Details)
-  }).catch(function(error) {
-    console.log("Failed ! ", error)
   })
 
 })()
