@@ -16,16 +16,18 @@
     <div class="col-2" id="percentF">Femme : <b>Y%</b> </div>
   </div>
 
-  <student-list></student-list>
+  <div ng-view></div>
 
-
-  <script src="/node_modules/angular/angular.js"></script>
   <!-- App models -->
   <script type="text/javascript" src="/app/models/student.js"></script>
   <script type="text/javascript" src="/app/collections/students.js"></script>
 
   <!-- angular -->
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
+
   <script src="/app/studentApp.js"></script>
+
   <script src="/app/components/studentList/studentListModule.js"></script>
   <script src="/app/components/studentList/studentListController.js"></script>
   <script src="/app/components/studentList/studentListComponent.js"></script>
