@@ -1,4 +1,4 @@
 {
-  allergies: ["none"],
-  likes: ["fruits", "vegetables"]
+  "allergies": ["none"],
+  "likes": ["fruits", "vegetables"]
 }

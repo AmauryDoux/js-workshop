@@ -1,4 +1,4 @@
 {
-  allergies: ["gluten", "peanuts"],
-  likes: ["chocolate", "vanilla"]
+  "allergies": ["gluten", "peanuts"],
+  "likes": ["chocolate", "vanilla"]
 }

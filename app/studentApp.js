@@ -7,18 +7,24 @@ angular.module('studentApp', [
 
 (function() {
   console.log("Hello");
+  let studentsJSON;
   // equivalent: get("/students.json").then(JSON.parse)
-  get("/students.json").then(function(response) {
-    console.log("Success !")
-    return JSON.parse(response);
-  }, function(error) {
+  getJSON("/students.json").then(function(students) {
+    studentsJSON = students;
+    return getJSON(`/details_info_${students[1].id}.json`);
+  }).then(function(student1Details) {
+    console.log(studentsJSON);
+    console.log(student1Details)
+  }).catch(function(error) {
     console.log("Failed ! ", error)
-
-  }).then(function(parsedResponse) {
-    console.log(parsedResponse)
   })
 
 })()
+
+function getJSON(url) {
+  console.log(url);
+  return get(url).then(JSON.parse);
+}
 
 function get(url) {
   // Return a new promise.
