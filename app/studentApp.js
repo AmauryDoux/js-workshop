@@ -2,18 +2,20 @@
 angular.module('studentApp', [
   'studentList',
   'studentDetail',
-  'ngRoute'
-]).config(['$locationProvider', '$routeProvider',
-  function config($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
+  'ui.router'
+]).config(['$stateProvider', '$urlRouterProvider',
+  function config($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/students');
 
-    $routeProvider.
-      when('/students', {
+    $stateProvider
+      .state('students', {
+        url: '/students',
         template: '<student-list></student-list>'
-      }).
-      when('/students/:studentId', {
+      })
+      .state('detail', {
+        url: '/students/:id',
         template: '<student-detail></student-detail>'
-      }).
-      otherwise('/students')
+      })
+
   }
 ])
