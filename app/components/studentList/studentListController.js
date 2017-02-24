@@ -1,6 +1,6 @@
+"use strict"
 angular.module("studentList").controller("studentListController", ["$http", function studentListController($http) {
-
-  let studentsCollection; 
+  let studentsCollection;
   this.orderProp = 'age'
 
   $http.get("/students.json").then((response) => {
